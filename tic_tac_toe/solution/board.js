@@ -3,6 +3,7 @@ const MoveError = require("./moveError");
 class Board {
   constructor() {
     this.grid = Board.makeGrid();
+    this.marks = ['x', 'o'];
   }
 
   isEmptyPos(pos) {
@@ -14,7 +15,7 @@ class Board {
   }
 
   isOver() {
-    if (this.winner() != null) {
+    if (this.winner() !== null) {
       return true;
     }
 
@@ -69,7 +70,7 @@ class Board {
 
     for (let i = 0; i < posSeqs.length; i++) {
       const winner = this.winnerHelper(posSeqs[i]);
-      if (winner != null) {
+      if (winner !== null) {
         return winner;
       }
     }
@@ -85,7 +86,7 @@ class Board {
         const pos = posSeq[posIdx];
         const mark = this.grid[pos[0]][pos[1]];
 
-        if (mark != targetMark) {
+        if (mark !== targetMark) {
           winner = false;
         }
       }
