@@ -1,0 +1,36 @@
+/* PHASE 9: Forms */
+.form {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  background: #eee;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 75%;
+  height: 340px;
+  margin-left: 40px
+  /* padding: 10px; */
+}
+
+label{
+  font-weight: 700;
+}
+
+.input{
+
+}
+
+#pt {
+  height: 50px;
+}
+
+.form > textarea {
+  /* height: 120px; */
+}
+
+.submit{
+  display: none;
+  padding: 10px;
+
+}
