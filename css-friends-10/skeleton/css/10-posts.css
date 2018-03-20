@@ -1,1 +1,22 @@
 /* PHASE 10: Posts */
+.post-footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.post{
+  display: flex;
+  flex-direction: column;
+}
+
+.post-actions{
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.post-info{
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+}
