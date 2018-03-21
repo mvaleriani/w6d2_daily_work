@@ -8,9 +8,21 @@ h1 {
 }
 
 body{
-
+  position: relative;
   background-color: #FF8CBF;
   border: 12px solid #FEB6FE;
+}
+
+#palm1{
+  width:auto;
+  height:600px;
+
+}
+
+#palm2{
+  width:auto;
+  height:600px;
+
 
 }
 
@@ -20,6 +32,7 @@ body{
 }
 
 .grid {
+
   padding: 0;
   list-style: none;
   display: flex;

@@ -1,24 +1,25 @@
 class View {
   constructor(game, $el) {
     this.game = game;
-    console.log('test view');
-    console.log('test view');
 
     this.setupBoard();
 
     this.bindEvents();
+    this.aud = $("audio");
+    this.aud[0].play();
+    this.aud[0].volume = .5;
+    $('h1').addClass('animated fadeIn');
   }
 
   bindEvents() {
     // click
     let nodes = $('.node');
     let bGame = this.game;
-    // console.log($('.node').length);
-    // console.log(nodes[2]);
+
     for (var i = 0; i < nodes.length; i++) {
       $(nodes[i]).on("click", (node) => {
         let pos = $(node.target).attr('id').split('_');
-        console.log(pos);
+
         if (bGame.board.isEmptyPos(pos)) {
           this.makeMove($(node.target), pos);
         }
@@ -27,7 +28,9 @@ class View {
   }
 
   makeMove($square, pos) {
-    console.log($square);
+    $('#palm1').removeClass('animated jello');
+    $('#palm2').removeClass('animated jello');
+    this.aud[1].currentTime = 0;
     if (this.game.currentPlayer === this.game.board.marks[0]) {
       $square.append($(`<img src="./images/bust.gif" alt="">`));
     } else {
@@ -35,14 +38,14 @@ class View {
     }
     this.game.playMove(pos);
 
+    this.aud[1].play();
 
-    // game
+    $('#palm1').addClass('animated jello');
+    $('#palm2').addClass('animated jello');
 
   }
 
   setupBoard() {
-    debugger;
-    console.log(this);
     let spaces = [];
     let board = this.game.board.grid;
 
